@@ -10,10 +10,26 @@
     <h1>resposta</h1>
 
     <?php
-        $valor1 = $_POST['valor1'];
-        $valor2 = $_POST['valor2'];
-        $soma = $valor1 + $valor2;
-        echo "O valor da soma é $soma";
+        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+        
+            try {
+            $valor1 = $_POST['valor1'];
+            $valor2 = $_POST['valor2'];
+            $soma = $valor1 + $valor2;
+            echo "O valor da soma é $soma";
+            $div = $valor1 / $valor2;
+            echo "O valor da divisão  é $div";
+            $multi = $valor1 * $valor2;
+            echo "O valor da multiplicação  é $multi";
+            }
+            ///resto da divisão = %
+         catch(Exception $e)
+        {
+            echo $e->getMessage();
+        }
+
+            }
     ?>
 
 
