@@ -16,15 +16,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Resposta do exercício 9 </h1>
+    <h1>Resposta do exercício 8 </h1>
 
     <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
-        $raio = $_POST['raio'];
+        $altura = $_POST['altura'];
+        $largura = $_POST['largura'];
 
-        $area = (($raio**2) * 3.14);
-        echo $area;
+        $perimetro = ($altura * 2) +  ($largura * 2);
+        echo $perimetro;
 
     } catch (Exception $e) {
         echo $e->getMessage();

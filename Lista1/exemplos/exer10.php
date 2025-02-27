@@ -9,12 +9,18 @@
   <body>
 
 
-  <form method="post" action="exer9resposta.php">
+  <form method="post" action="exer10resposta.php">
                         
                         <div class="mb-3">
-                            <label for="raio" class="form-label">Informe o raio do circulo :</label>
-                            <input type="number" id="raio" name="raio" class="form-control" required="">
+                            <label for="altura" class="form-label">Informe a altura :</label>
+                            <input type="number" id="altura" name="altura" class="form-control" required="">
                         </div>
+
+                        <div class="mb-3">
+                            <label for="largura" class="form-label">Informe a largura :</label>
+                            <input type="number" id="largura" name="largura" class="form-control" required="">
+                        </div>
+
 
                     <button type="submit" class="btn btn-primary">Calcular</button>
     </form>
