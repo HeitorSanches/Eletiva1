@@ -29,12 +29,27 @@ declare(strict_types=1);
     <h1>Resposta do exercício 7</h1>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+    {
+
+      function diffDate(string $data1, string $data2)
+      {
+        $data1Obj = new DateTime($data1);
+        $data2Obj = new DateTime($data2);
+
+        $diferenca = $data1Obj->diff($data2Obj);
+
+        echo "A diferença das datas é " . $diferenca->days . " dias";
+      }
 
 
       }
 
       try {
+
+            $data1 = $_POST['data1'];
+            $data2 = $_POST['data2'];
+            diffDate($data1,$data2);
 
 
       } catch (Exception $e) {
