@@ -32,7 +32,7 @@ declare(strict_types=1);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') 
     {
 
-      function diffDate(string $data1, string $data2)
+      function diffDate(string $data1, string $data2) : void 
       {
         $data1Obj = new DateTime($data1);
         $data2Obj = new DateTime($data2);
