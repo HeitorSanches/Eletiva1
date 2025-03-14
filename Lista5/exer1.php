@@ -22,14 +22,16 @@ declare(strict_types=1);
         
         <?php for($i=0;$i<5;$i++): ?>
 
+        <h3 class="text-center mb-4">Cadastre o contato : </h3>
         <div class="mb-2">
             <label for="nome" class="form-label">Digite o nome : </label>
             <input type="text" id="nome" name="nome[]" class="form-control" required="">
         </div>
 
-        <div class="mb-2">
+        <div class="mb-4">
             <label for="tel" class="form-label">Digite o tel : </label>
             <input type="text" id="tel" name="tel[]" class="form-control" required="">
+            
         </div>
 
         <?php endfor; ?>
@@ -44,10 +46,33 @@ declare(strict_types=1);
                 $a = array(); 
                 $nome = $_POST['nome'];
                 $tel = $_POST['tel'];
-                for($i=0;$i<5;$i++){
-                    $posicao = $nome[$i];
-                    $a[$posicao] = $tel[$i];
+                $nomes_cadastrados = array();
+
+                for($i=0;$i<5;$i++) 
+                {
+                    if (!in_array(strtolower($nome[$i]),$nomes_cadastrados))
+                    {
+                        $posicao = $nome[$i];
+                        $a[$posicao] = $tel[$i];
+                        $nomes_cadastrados[$i] = $nome[$i];
+                        echo "Nome : $posicao, Telefone : $tel[$i]";
+                        echo "<br>";
+                    }
+                    else
+                    {
+                        echo "Nome já cadastrado";
+                        echo "<br>";
+                    }
+        
                 }
+
+                // foreach($nome as $c => $n)
+                // {
+                //     echo "<p>Posição : $c - Valor : $n <p>";
+                // }
+
+            
+
             } catch (Exception $e){
                 echo $e->getMessage();
             }
