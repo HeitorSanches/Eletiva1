@@ -8,39 +8,35 @@ declare(strict_types=1);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro de Alunos</title>
+    <title>Cadastro de Produtos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body class="container mt-5">
 
-    <h2 class="text-center mb-4">Cadastro de Alunos</h2>
+    <h2 class="text-center mb-4">Cadastro de Produtos</h2>
 
-    <form method="post" action="exer2resposta.php">
+    <form method="post" action="exer3resposta.php">
         
-        <?php for ($i = 0; $i < 5; $i++): ?>
+        <?php for ($i = 0; $i < 2; $i++): ?>
             <div class="border p-4 mb-4 rounded shadow-sm">
-                <h4 class="text-center mb-3">Aluno <?= $i + 1 ?></h4>
+                <h4 class="text-center mb-3">Produto <?= $i + 1 ?></h4>
 
                 <div class="mb-2">
-                    <label for="nome[]" class="form-label">Nome:</label>
-                    <input type="text" id="nome[]" name="nome[]" class="form-control" required>
+                    <label for="cod" class="form-label">Código:</label>
+                    <input type="number" id="cod" name="cod[]" class="form-control" required>
                 </div>
 
                 <div class="mb-2">
-                    <label for="n1[]" class="form-label">Nota 1:</label>
-                    <input type="number" id="n1[]" name="n1[]" class="form-control" step="0.01" required>
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" id="nome" name="nome[]" class="form-control" required>
                 </div>
 
                 <div class="mb-2">
-                    <label for="n2[]" class="form-label">Nota 2:</label>
-                    <input type="number" id="n2[]" name="n2[]" class="form-control" step="0.01" required>
+                    <label for="preco" class="form-label">Preço:</label>
+                    <input type="number" id="preco" name="preco[]" class="form-control" step="0.01" required>
                 </div>
 
-                <div class="mb-2">
-                    <label for="n3[]" class="form-label">Nota 3:</label>
-                    <input type="number" id="n3[]" name="n3[]" class="form-control" step="0.01" required>
-                </div>
             </div>
         <?php endfor; ?>
 
