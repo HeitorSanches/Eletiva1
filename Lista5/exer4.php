@@ -16,16 +16,12 @@ declare(strict_types=1);
 
     <h2 class="text-center mb-4">Cadastro de Produtos</h2>
 
-    <form method="post" action="exer3resposta.php">
+    <form method="post" action="exer4resposta.php">
         
-        <?php for ($i = 0; $i < 5; $i++): ?>
+        <?php for ($i = 0; $i < 2; $i++): ?>
             <div class="border p-4 mb-4 rounded shadow-sm">
                 <h4 class="text-center mb-3">Produto <?= $i + 1 ?></h4>
 
-                <div class="mb-2">
-                    <label for="cod" class="form-label">Código:</label>
-                    <input type="number" id="cod" name="cod[]" class="form-control" required>
-                </div>
 
                 <div class="mb-2">
                     <label for="nome" class="form-label">Nome:</label>
